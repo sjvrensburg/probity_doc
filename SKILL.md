@@ -79,14 +79,46 @@ the front matter to drop it.
 ### 3. Use the template in another project
 
 To brand documents outside this repo, install the extension into the target
-project:
+project. Three methods:
+
+**Install script (recommended):**
 
 ```bash
-quarto add /home/stefan/Documents/probity_doc/_extensions/probity
+./install.sh /path/to/target/project
 ```
 
-or copy the `_extensions/probity/` directory into that project. Then set
-`format: probity-docx` in the document.
+**quarto add:**
+
+```bash
+cd /path/to/target/project
+quarto add /path/to/probity_doc/_extensions
+```
+
+Note: point `quarto add` at the `_extensions` directory itself, not at the
+`_extensions/probity` subdirectory.
+
+**Manual copy:**
+
+```bash
+cp -r _extensions/probity /path/to/target/project/_extensions/
+```
+
+Then set `format: probity-docx` in the document's front matter. The
+`_extensions/` directory must be in a parent directory of the document (at the
+project root), not next to the document itself. Document-level options like
+`lang: en-GB` go in the document front matter, not inside the format block.
+
+**Required: `_quarto.yml` at the project root.** Quarto uses this file to
+identify the project boundary. Without it, documents in subdirectories (e.g.
+`pipeline/docs/report.qmd`) will fail with "Unable to read the extension".
+A minimal file is enough:
+
+```yaml
+project:
+  title: "My Project"
+```
+
+The install script creates one automatically if missing.
 
 ## What the template gives you automatically
 
@@ -118,7 +150,7 @@ Write Markdown the normal way. A few Probity-specific patterns:
   italic below the figure.
 - **Blockquotes** (`>`) suit the honesty pattern: headline finding first, then
   what it depends on.
-- **Code**: fenced blocks render in Consolas. `highlight-style: github` is set.
+- **Code**: fenced blocks render in Consolas.
 
 ## Writing voice (non-negotiable)
 

@@ -4,6 +4,7 @@ subtitle: "A short descriptive subtitle"
 author: "Author Name, Role"
 date: today
 format: probity-docx
+lang: en-GB
 abstract: |
   One short paragraph stating what this document is and what it concludes.
   Lead with the answer, then the qualification.
