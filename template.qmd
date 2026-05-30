@@ -1,0 +1,44 @@
+---
+title: "Document Title"
+subtitle: "A short descriptive subtitle"
+author: "Author Name, Role"
+date: today
+format: probity-docx
+abstract: |
+  One short paragraph stating what this document is and what it concludes.
+  Lead with the answer, then the qualification.
+---
+
+# Section heading
+
+Body text in the Probity register: plain, direct, UK spelling, no em dashes.
+Lead with the answer, then state the dependency or limitation in the next
+sentence. Keep one idea per sentence.
+
+## Subsection
+
+A **bold navy lead-in.** Then the body text continues, as used heavily in
+caveat lists.
+
+- First point
+- Second point
+- Third point
+
+### Smaller heading
+
+A table renders with a navy header row and hairline body rows:
+
+| Variant | Description | Value |
+|---|---|---|
+| S0 | Baseline | R 14,903,239 |
+| S1 | Drop COVID year | R 12,410,008 |
+| S2 | Lag-1 GDP | R 13,775,512 |
+
+: Provision under each scenario {#tbl-scenarios}
+
+A figure with a caption:
+
+![Loss rate against lag-1 GDP](_extensions/probity/assets/logo_trim.png){#fig-fit width=60%}
+
+> A blockquote, useful for the honesty pattern: state the headline finding,
+> then state what it depends on.

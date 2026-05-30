@@ -1,0 +1,16 @@
+title: Probity Word Document
+author: Probity Data Analytics
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    docx:
+      reference-doc: reference.docx
+      toc: true
+      toc-depth: 3
+      number-sections: false
+      highlight-style: github
+      fig-align: left
+      fig-cap-location: bottom
+      tbl-cap-location: top
+      lang: en-GB

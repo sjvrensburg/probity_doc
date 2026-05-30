@@ -1,0 +1,8 @@
+# Rendered test outputs
+/template.docx
+/*.docx
+!_extensions/**/reference.docx
+build/ref/
+build/template.pdf
+build/pg*.png
+.quarto/
