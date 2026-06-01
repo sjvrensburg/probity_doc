@@ -195,6 +195,13 @@ These rules apply to every word in a Probity document. Apply them as you draft.
    ISO `2024-06-30` in tables, "30 June 2024" in prose. Fiscal years
    `FY 2024/25`. Lag notation `lag-1`. Greek letters written out in prose,
    actual characters (`α`, `β₁`) in tables and equations.
+9. **Title case for headings.** Every heading and subheading, at all levels,
+   uses title case: capitalise the first and last word plus all principal words;
+   keep minor words lower-case in the middle — articles (`a`, `an`, `the`),
+   coordinating conjunctions (`and`, `but`, `or`), and short prepositions (`of`,
+   `to`, `in`, `on`, `for`, `with`). `Provision Under Each Scenario`, not
+   `Provision under each scenario`. Body text, captions, and bullet fragments
+   stay sentence case.
 
 ## Workflow when producing a document
 

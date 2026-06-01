@@ -10,7 +10,7 @@ abstract: |
   Lead with the answer, then the qualification.
 ---
 
-# Section heading
+# Section Heading
 
 Body text in the Probity register: plain, direct, UK spelling, no em dashes.
 Lead with the answer, then state the dependency or limitation in the next
@@ -25,7 +25,7 @@ caveat lists.
 - Second point
 - Third point
 
-### Smaller heading
+### Smaller Heading
 
 A table renders with a navy header row and hairline body rows:
 
