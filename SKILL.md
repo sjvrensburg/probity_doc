@@ -84,8 +84,14 @@ project. Three methods:
 **Install script (recommended):**
 
 ```bash
-./install.sh /path/to/target/project
+./install.sh /path/to/target/project                 # document at the project root
+./install.sh /path/to/target/project pipeline/docs   # document in a subdirectory
 ```
+
+If the document lives in a subdirectory, pass it as a second argument so the
+extension is co-located with the document (copies by default; `--link` symlinks
+on Unix). This is the reliable fix for the subdirectory-discovery failure noted
+below.
 
 **quarto add:**
 
@@ -104,21 +110,29 @@ cp -r _extensions/probity /path/to/target/project/_extensions/
 ```
 
 Then set `format: probity-docx` in the document's front matter. The
-`_extensions/` directory must be in a parent directory of the document (at the
-project root), not next to the document itself. Document-level options like
-`lang: en-GB` go in the document front matter, not inside the format block.
+`_extensions/` directory must be on the path from the document up to the project
+root — either at the project root (with the document at or below it) or, for a
+subdirectory document, **co-located next to the document**. Document-level
+options like `lang: en-GB` go in the document front matter, not inside the format
+block.
 
-**Required: `_quarto.yml` at the project root.** Quarto uses this file to
-identify the project boundary. Without it, documents in subdirectories (e.g.
-`pipeline/docs/report.qmd`) will fail with "Unable to read the extension".
-A minimal file is enough:
+**Subdirectory documents.** Quarto discovers `_extensions/` by walking up from
+the document only as far as the project root (the nearest ancestor with a
+`_quarto.yml`). A subdirectory document fails with "Unable to read the extension"
+when there is no `_quarto.yml` at the project root (e.g. after `quarto add`) or
+an intermediate `_quarto.yml` re-anchors the root below `_extensions/`. The
+install script creates a minimal root `_quarto.yml` automatically:
 
 ```yaml
 project:
   title: "My Project"
 ```
 
-The install script creates one automatically if missing.
+For the cases a root `_quarto.yml` alone does not cover, co-locate the extension
+with the document — `./install.sh <project> <doc-subdir>`. (This also resolves
+any figure that references `_extensions/probity/assets/...` from the
+subdirectory; the branded header logo is baked into `reference.docx` and is never
+affected.) Prefer keeping documents at the project root when you can.
 
 ## What the template gives you automatically
 
